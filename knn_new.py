@@ -10,7 +10,7 @@ width = float(input("Enter the width of the fruit in cm: "))
 height = float(input("Enter the height of the fruit in cm: "))
 
 
-fruits = pd.read_table("C:/Users/sande/Desktop/fruit_data_with_colors.txt")
+fruits = pd.read_table("#path")
 # print(fruits.head())
 
 lookup_fruit_name = dict(zip(fruits.fruit_label.unique(), fruits.fruit_name.unique()))
@@ -39,6 +39,6 @@ new_row = pd.DataFrame([[new_data[0], new_data[1], new_data[2], predicted_label]
 fruits_simple = fruits[['mass', 'width', 'height', 'fruit_label']]
 fruits_updated = pd.concat([fruits_simple, new_row], ignore_index=True)
 
-updated_path = "C:/Users/sande/Desktop/fruit_data_updated.txt"
+updated_path = "#path"
 fruits_updated.to_csv(updated_path, sep='\t', index=False)
 print(f"New data added and saved to: {updated_path}")
